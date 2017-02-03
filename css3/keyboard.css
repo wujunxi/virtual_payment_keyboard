@@ -1,0 +1,19 @@
+
+/* 虚拟数字键盘 */
+.keyboard {display:-webkit-flex;display: -webkit-box;display: flex;width:100%;position: fixed;bottom:0;-webkit-transform:translateY(200px);transform:translateY(200px);-webkit-transition: transform 0.5s;transition: transform 0.5s;}
+.keyboard.on {-webkit-transform:translateY(0);transform:translateY(0);}
+.keyboard .column {-webkit-box-flex: 1; -webkit-flex:1;flex:1;display:-webkit-flex;display: -webkit-box;display: flex;box-orient: vertical;-webkit-box-orient: vertical;-webkit-flex-direction: column;flex-direction: column;-webkit-box-sizing:border-box;box-sizing: border-box;border-left:solid 1px #dedede;}
+.keyboard .column:first-child {border-left:none;}
+.keyboard .key {-webkit-box-flex: 1; -webkit-flex:1;flex:1;height:50px;line-height:50px;text-align: center;font-size:18px;font-weight:bold;background: #fff;-webkit-box-sizing:border-box;box-sizing: border-box;border-top:solid 1px #dedede;}
+.keyboard .key:active {color: rgba(255, 255, 255, 0.4);background: #eee;color: #ffaa00;}
+.keyboard .key.rows-3 {height:150px;line-height: 150px;}
+.keyboard .key.pay {background: #5aa7ff;color:#fff;}
+.keyboard .key.pay:active,.keyboard .key.off {color: rgba(255, 255, 255, 0.4);background: #509bff;}
+.keyboard .key.backspace:before {content:"";display: inline-block;width:26px;height:18px;vertical-align:middle;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAkCAMAAADxcOlCAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA/UExURUxpcQsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBOdxy0oAAAAUdFJOUwC5kfIjF+DlxdkHqmk6fC8QnFZJnJ1IZgAAAXpJREFUOMudlVmWhCAMRRWZRJBB97/WrgClJCqe6vyhXl7ySHAYcAg2v4QcHWH4sr+H/gezK8QEYCbdjYlAIgKz8l54jSGRdezQDTMiKBSdPjMIBAUGNa7mWBOFcAMVhh2frovH5cZwgQybWias0649Tj0KApkVmHjoOPlZjhwfRcKQWSG3slX5yio4ed/ayrCSscAsoi3CgrTmpw4zqKaam8B2FS1XW2v62vqFbnQgElCzF4ipkMmJnEUTrREzFXrQgdhUbWtLO0I96OQMwflW5wtlE8w95OcMbZfe67QpH0t2s6NQHaIbLafhTfZwo13+RPHMJAcpqo2ORjk9SygPuamPbxuijjYi53d6oBI8K1qJztNVK9ejbLvIG7SjkX1qqKwj07HFmWE7hHxsdi7SKmFh7S7jXr06byaZUIm6Dhe+WLzG1pIL2/u726hQeP/XK6yWO7s+FAhUrJ23PkWhwcMoyMg6ESWFSsv8+Kupdb2FvIy4VvIt7B/pWS/P0jQaLgAAAABJRU5ErkJggg==") no-repeat 0 0;background-size: 100% 100%;}
+.keyboard .key.return:before {content:"";display: inline-block;width:28px;height:23.5px;vertical-align:middle;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAvCAMAAACBi/kPAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA2UExURUxpcQsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBAsHBK7f8kYAAAARdFJOUwBtIMeYDdT5iPXqRKcVWjq5VSpwHwAAAaZJREFUSMfNVduWgyAMDDdjAEH+/2c3yepuq7YVj2fP5oWSMgxmcgEAm6lhhzXKFtgStW6jxHwXcIy0kFvD6McO8xFby8CEMUCXhciUwLweOs0zSIBjL3C8DRie1xAO3TvgNKg+LCwOk3wJolc3Lu6m7j2QhWmRV46zICQxBOFRYgjAoWQRjoCDKBtg4oPNARgBGgDHW5wgyL/DIZBPopMLsCEDLF+AnJSGtwJwqPccBcc4Lx8xeacH6jzXA/etclwFWpN0TUbrLZQSDtx7YEIk+ekJqUoqE0n6V96KniMhpkOgxp0BIscMUESOAjCLmy9YVLoTmJCWp5I+dSAa9Km0PJVePBVsUd2glufgPLv/hY7jkDW38rCx1T0eA0dcknzfDZckx/FjWW3sfVk9FPKu/34XMuZXrSNK4FPcToso+tX4qnU8dKWNfWhWf6jjtRFweejomMu+w/L3mLs8WC+Pcq43H/tg0Vu404oRq+u26racAFqn9ZBVo5C1Vty5t8mcaigdrpDg1llzhlSgNM+6uJ5QmB+NztM9knbS/ZL20q2k7+i+AJh5OYt3snFMAAAAAElFTkSuQmCC") no-repeat 0 0;background-size: 100% 100%;}
+
+@media all and (min-height:600px){
+    .keyboard {-webkit-transform:translateY(240px);transform:translateY(240px);}
+    .keyboard .key{height:60px;line-height: 60px;}
+    .keyboard .key.rows-3 {height:180px;line-height: 180px;}
+}
