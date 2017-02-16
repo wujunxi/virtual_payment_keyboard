@@ -1,8 +1,18 @@
-
-    /**
-     * 虚拟支付键盘
-     */
-    exports.keyboard = (function () { // require keyboard.css
+/**
+ * @author wujx
+ * @date 2017-02-16
+ * @version 1.0.0
+ */
+(function(factory) {
+    if (typeof define === "function" && define.amd) {
+        // AMD模式
+        define(["zepto"], factory);
+    } else {
+        // 全局模式
+        factory(Zepto);
+    }
+}(function ($) {
+    $.keyboard = (function () { // require keyboard.css
         var $box,
             $pay,
             opt,
@@ -15,7 +25,7 @@
             init: function (_opt) {
                 if (isInit) return wrapObj;
                 opt = $.extend({
-                    maxLength: 10
+                    maxLength: 10 // 输入长度
                 }, _opt);
                 var htmlStr = "";
                 htmlStr += '<table class="keyboard">';
@@ -121,7 +131,6 @@
                 $pay.addClass("off");
             }
         }
-
         /**
          * 输入预处理
          * @param t
@@ -160,3 +169,4 @@
             return true;
         }
     })();
+}));

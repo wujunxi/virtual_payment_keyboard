@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no">
+    <title>Demo</title>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="table/keyboard.css" rel="stylesheet"/>
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="money" id="divMoney"></div>
+
+    <script src="scripts/zepto.min.js" type="text/javascript"></script>
+    <script src="table/keyboard.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var keyboard = $.keyboard;
+            var $divMoney = $("#divMoney");
+            // 模拟输入框
+            $divMoney.tap(function () {
+                if (!$divMoney.hasClass("focus")) {
+                    $divMoney.addClass("focus");
+                    keyboard.show();
+                }
+            });
+            // 初始化虚拟键盘
+            keyboard.init().onChange(function (t) { // 输入事件
+                $divMoney.text(t);
+            }).onReturn(function () { // 收起事件
+                $divMoney.removeClass("focus");
+            }).onPay(function () { // 支付事件
+                var money = keyboard.val();
+                money = parseFloat(money);
+                alert(money);
+            });
+            // 默认显示虚拟键盘
+            setTimeout(function () {
+                keyboard.show()
+            }, 0);
+        });
+    </script>
+</body>
+</html>

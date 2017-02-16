@@ -1,0 +1,148 @@
+/* 适配 */
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 14.2222px !important;
+    }
+}
+
+@media screen and (max-width: 360px) and (min-width: 321px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (max-width: 375px)  and (min-width: 361px) {
+    html {
+        font-size: 16.6667px !important;
+    }
+}
+
+@media screen and (max-width: 384px)  and (min-width: 376px) {
+    html {
+        font-size: 17.0667px !important;
+    }
+}
+
+@media screen and (max-width: 414px)  and (min-width: 385px) {
+    html {
+        font-size: 18.4px !important;
+    }
+}
+
+@media screen and (max-width: 435px)  and (min-width: 415px) {
+    html {
+        font-size: 19.3333px !important;
+    }
+}
+
+@media screen and (max-width: 460px)  and (min-width: 436px) {
+    html {
+        font-size: 21px !important;
+    }
+}
+
+@media screen and (max-width: 500px)  and (min-width: 461px) {
+    html {
+        font-size: 23px !important;
+    }
+}
+
+@media screen and (max-width: 541px)  and (min-width: 501px) {
+    html {
+        font-size: 25px !important;
+    }
+}
+
+@media screen and (max-width: 601px)  and (min-width: 542px) {
+    html {
+        font-size: 26.6667px !important;
+    }
+}
+
+@media screen and (max-width: 640px)  and (min-width: 602px) {
+    html {
+        font-size: 28.4444px !important;
+    }
+}
+
+@media screen and (max-width: 721px)  and (min-width: 641px) {
+    html {
+        font-size: 30px !important;
+    }
+}
+
+/*
+ * 适配pad
+ */
+
+@media screen and (max-width: 769px)  and (min-width: 721px) {
+    html {
+        font-size: 34.1333px !important;
+    }
+}
+
+@media screen and (max-width: 801px)  and (min-width: 770px) {
+    html {
+        font-size: 35.5556px !important;
+    }
+}
+
+@media screen and (max-width: 1281px)  and (min-width: 802px) {
+    html {
+        font-size: 56.8889px !important;
+    }
+}
+
+@media screen and (max-width: 1441px)  and (min-width: 1282px) {
+    html {
+        font-size: 64px !important;
+    }
+}
+
+@media screen and (max-width: 1601px)  and (min-width: 1442px) {
+    html {
+        font-size: 71.1111px !important;
+    }
+}
+
+@media screen and (max-width: 1921px)  and (min-width: 1602px) {
+    html {
+        font-size: 85.3333px !important;
+    }
+}
+
+@media screen and (max-width: 9999px)  and (min-width: 1922px) {
+    html {
+        font-size: 85.3333px !important;
+    }
+}
+
+/* 适配 */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout:none; /*系统默认菜单被禁用*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    user-select:none;
+}
+
+html, body {
+    line-height: 1;
+}
+
+input {
+    font-family: "Adobe Heiti Std","Microsoft YaHei",Helvetica Neue, Helvetica, Arial, sans-serif;
+    -webkit-user-select:auto; /*webkit浏览器*/
+}
+
+ul li {
+    list-style: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+a,a:hover,a:active{text-decoration:none;}

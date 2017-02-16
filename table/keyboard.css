@@ -1,7 +1,7 @@
 /* 虚拟数字键盘 */
-.keyboard {border-collapse:collapse;table-layout:fixed;width:100%;position: fixed;bottom:0;-webkit-transform:translateY(220px);transform:translateY(220px);-webkit-transition: transform 0.5s;transition: transform 0.5s;}
+.keyboard {border-collapse:collapse;table-layout:fixed;width:100%;position: fixed;bottom:0;-webkit-transform:translateY(224px);transform:translateY(224px);-webkit-transition: transform 0.5s;transition: transform 0.5s;}
 .keyboard.on {-webkit-transform:translateY(0);transform:translateY(0);}
-.keyboard .key {height:55px;line-height:55px;text-align: center;font-size:24px;color:#333;background: #fff;-webkit-box-sizing:border-box;box-sizing: border-box;border-top:solid 1px #dedede;border-left:solid 1px #dedede;}
+.keyboard .key {height:55px;line-height:55px;text-align: center;font-size:24px;color:#333;background: #fff;border-top:solid 1px #dedede;border-left:solid 1px #dedede;}
 .keyboard .key:active {color: rgba(255, 255, 255, 0.4);background: #eee;}
 .keyboard .key.pay {background: #5aa7ff;color:#fff;vertical-align: top;}
 .keyboard .key.pay:active,.keyboard .key.off {color: rgba(255, 255, 255, 0.4);background: #509bff;}
@@ -9,6 +9,6 @@
 .keyboard .key.return:before {content:"";display: inline-block;width:33px;height:33px;vertical-align:middle;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAMAAADUivDaAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAzUExURUxpcTMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM4zg0ucAAAAQdFJOUwAfbQeYENSI+/fD60SnWjqCfFkSAAABx0lEQVRYw+1W23KEIAwFIVzl8v9f2wS1q9RZjVtn2hnPC0s0Z49JSBDiwYO/Dpl89QxUn+SWYfSVDT9uNFxgQI61jlSri9oyoKOrNa0oUERUvOCpiDJWe1SluQnQ6LSlsFwKeysFzN+6rHOMQG0ev6GQxsWxFYoz9LZ2jqIExrUyGKMz8oAiYa4i/jfmiHyp5MhXo9mjDkyDSwcUhmpGCUCXGoQYiGIQIuDWgVD01BxQoI8LROWaK5UtFSGZyTVM5vfhHIKmGIAO7dUSQtkx357UzynkMJ3hcWjJg5xhx/yOYsR2Qj81rhgEiN5H5Ci4pfqwuI4HFC17r6Rmykh+JXU2n6FQexTqHEX3Icp4bxTvQ4TMrQ5EyS1uKme1Y/4HdWFNgjZXTIc2NyAZe0Rh5/NkXN/yF7O3jMPec5w87KuW82PynGw5YGosU4fbDtGpH5ZYDRxmZBlJ0KF7/Gfr4tOBSGMZeAzQjeV2OUiagdRfDn7hikLzj0vgthcl1KEjjyFqefcVUuWBUJZ9advMukvJ0OLVWgc2iRbtwFVOMx0zjd07U/6+pzFPCJH4MC/XgjcJuSphLeSyhJeQ6xIWIeH2EnrwYB9fFAg3L1kuD7kAAAAASUVORK5CYII=") no-repeat 0 0;background-size: 100% 100%;}
 
 @media all and (min-height:600px){
-    .keyboard {-webkit-transform:translateY(280px);transform:translateY(280px);}
+    .keyboard {-webkit-transform:translateY(284px);transform:translateY(284px);}
     .keyboard .key{height:70px;line-height: 70px;font-size:32px;}
 }
