@@ -8,3 +8,5 @@
  1. 需要引用包含touch模块的Zepto。
 
  1. 支持AMD。
+
+ [Demo](https://wujunxi.github.io/virtual_payment_keyboard/)

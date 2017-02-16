@@ -2,6 +2,7 @@
  * @author wujx
  * @date 2017-02-16
  * @version 1.0.0
+ * https://github.com/wujunxi/virtual_payment_keyboard
  */
 (function(factory) {
     if (typeof define === "function" && define.amd) {
