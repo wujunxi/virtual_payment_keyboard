@@ -22,6 +22,11 @@
             changeFun = $.noop,
             inputText = "";
         var wrapObj = {
+            /**
+             * 初始化
+             * @param _opt
+             * @returns {{init: wrapObj.init, show: wrapObj.show, hide: wrapObj.hide, val: wrapObj.val, onPay: wrapObj.onPay, onReturn: wrapObj.onReturn, onChange: wrapObj.onChange}}
+             */
             init: function (_opt) {
                 if (isInit) return wrapObj;
                 opt = $.extend({
@@ -52,8 +57,10 @@
                 htmlStr += '<td class="key" data-key=".">.</td>';
                 htmlStr += '</tr>';
                 htmlStr += '</table>';
+                // 挂载在body下
                 $box = $(htmlStr).appendTo("body");
                 $pay = $(".pay", $box);
+                // 监听触摸事件
                 $box.on("tap", ".key", function () {
                     var $this = $(this),
                         key = $this.attr("data-key");
@@ -71,7 +78,7 @@
                             changeFun(inputText);
                             refresh(inputText);
                         }
-                    } else if (inputText.length < opt.maxLength) {
+                    } else if (inputText.length < opt.maxLength) { // 数字和小数点
                         var temp = inputText + key;
                         // 输入预校验
                         if (!preCheck(temp)) {
@@ -85,6 +92,10 @@
                 isInit = true;
                 return wrapObj;
             },
+            /**
+             * 显示
+             * @returns {{init: wrapObj.init, show: wrapObj.show, hide: wrapObj.hide, val: wrapObj.val, onPay: wrapObj.onPay, onReturn: wrapObj.onReturn, onChange: wrapObj.onChange}}
+             */
             show: function () {
                 if (!isInit) this.init();
                 if (!$box.hasClass("on")) {
@@ -92,11 +103,20 @@
                 }
                 return wrapObj;
             },
+            /**
+             * 隐藏
+             * @returns {{init: wrapObj.init, show: wrapObj.show, hide: wrapObj.hide, val: wrapObj.val, onPay: wrapObj.onPay, onReturn: wrapObj.onReturn, onChange: wrapObj.onChange}}
+             */
             hide: function () {
                 if (!isInit) return;
                 $box.removeClass("on");
                 return wrapObj;
             },
+            /**
+             * 获取值
+             * @param v
+             * @returns {*}
+             */
             val: function (v) {
                 if (arguments.length > 0) {
                     inputText = v + "";
@@ -105,14 +125,29 @@
                     return inputText;
                 }
             },
+            /**
+             * 定义支付按钮事件
+             * @param fun
+             * @returns {{init: wrapObj.init, show: wrapObj.show, hide: wrapObj.hide, val: wrapObj.val, onPay: wrapObj.onPay, onReturn: wrapObj.onReturn, onChange: wrapObj.onChange}}
+             */
             onPay: function (fun) {
                 payFun = fun;
                 return wrapObj;
             },
+            /**
+             * 定义返回按钮事件
+             * @param fun
+             * @returns {{init: wrapObj.init, show: wrapObj.show, hide: wrapObj.hide, val: wrapObj.val, onPay: wrapObj.onPay, onReturn: wrapObj.onReturn, onChange: wrapObj.onChange}}
+             */
             onReturn: function (fun) {
                 returnFun = fun;
                 return wrapObj;
             },
+            /**
+             * 定义输入变动事件
+             * @param fun
+             * @returns {{init: wrapObj.init, show: wrapObj.show, hide: wrapObj.hide, val: wrapObj.val, onPay: wrapObj.onPay, onReturn: wrapObj.onReturn, onChange: wrapObj.onChange}}
+             */
             onChange: function (fun) {
                 changeFun = fun;
                 return wrapObj;
@@ -124,7 +159,7 @@
          * @param t
          */
         function refresh(t) {
-            // 判断是否让支付按钮可用
+            // 判断是否让支付按钮可用，校验格式为数字和小数点组成，允许两位小数
             if (/^(\d|([1-9]\d+))(.\d{1,2})?$/.test(t)) {
                 $pay.removeClass("off");
             } else {
