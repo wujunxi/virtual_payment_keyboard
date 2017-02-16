@@ -29,7 +29,7 @@
                 htmlStr += '<td class="key" data-key="4">4</td>';
                 htmlStr += '<td class="key" data-key="5">5</td>';
                 htmlStr += '<td class="key" data-key="6">6</td>';
-                htmlStr += '<td class="key pay off" rowspan="3" data-key="pay">支 付</td>';
+                htmlStr += '<td class="key pay off" rowspan="3" data-key="pay"><br/>支 付</td>';
                 htmlStr += '</tr>';
                 htmlStr += '<tr class="row">';
                 htmlStr += '<td class="key" data-key="7">7</td>';
@@ -44,7 +44,7 @@
                 htmlStr += '</table>';
                 $box = $(htmlStr).appendTo("body");
                 $pay = $(".pay", $box);
-                $box.on("click", ".key", function () {
+                $box.on("tap", ".key", function () {
                     var $this = $(this),
                         key = $this.attr("data-key");
                     if ($this.hasClass("off")) {
@@ -62,6 +62,11 @@
                             refresh(inputText);
                         }
                     } else if (inputText.length < opt.maxLength) {
+                        var temp = inputText + key;
+                        // 输入预校验
+                        if (!preCheck(temp)) {
+                            return;
+                        }
                         inputText += key;
                         refresh(inputText);
                         changeFun(inputText);
@@ -104,6 +109,10 @@
             }
         };
         return wrapObj;
+        /**
+         * 键盘状态更新
+         * @param t
+         */
         function refresh(t) {
             // 判断是否让支付按钮可用
             if (/^(\d|([1-9]\d+))(.\d{1,2})?$/.test(t)) {
@@ -111,5 +120,43 @@
             } else {
                 $pay.addClass("off");
             }
+        }
+
+        /**
+         * 输入预处理
+         * @param t
+         * @returns {boolean}
+         */
+        function preCheck(t) {
+            var i, len, hasFlag, n;
+            if (t.length > 0) {
+                // 小数点不能作为开头
+                if (t[0] == ".") {
+                    return false;
+                }
+                hasFlag = false;
+                n = 0;
+                for (i = 0, len = t.length; i < len; i++) {
+                    // 输入的是小数点
+                    if (t[i] == ".") {
+                        // 不能有多个小数点
+                        if (hasFlag) {
+                            return false;
+                        } else {
+                            hasFlag = true;
+                        }
+                    } else {
+                        // 限制两位小数
+                        if (hasFlag) {
+                            if (n > 1) {
+                                return false;
+                            } else {
+                                n++;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
         }
     })();
