@@ -40,15 +40,14 @@ gulp.task("build-js",function(){
     .pipe(gulp.dest("dist"));
 });
 
-gulp.task("build-html",function(){
-    return gulp.src("index.html")
-    .pipe(inlinesourece({
-        compress: false
-    }))
-    .pipe(gulp.dest("dist"));
-});
+// gulp.task("build-html",function(){
+//     return gulp.src("index.html")
+//     .pipe(inlinesourece({
+//         compress: false
+//     }))
+//     .pipe(gulp.dest("dist"));
+// });
 
-// gulp.task("default",["build-js","build-css"]);
 gulp.task("default",["clean"],function(){
     gulp.start("build-js","build-css");
 });
